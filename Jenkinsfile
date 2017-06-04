@@ -2,17 +2,17 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('签出') {
             steps {
                 echo 'Building..'
             }
         }
-        stage('Test') {
+        stage('编译') {
             steps {
                 echo 'Testing..'
             }
         }
-        stage('Deploy') {
+        stage('单元测试') {
             steps {
                 echo 'Deploying....'
             }
