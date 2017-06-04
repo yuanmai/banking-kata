@@ -29,7 +29,12 @@ pipeline {
           }
         )
             }
-        }        
+        }     
+        stage('打包') {
+            steps {
+                echo 'Deploying....'
+            }
+        }    
         stage('部署测试环境') {
             steps {
                 echo 'Deploying....'
