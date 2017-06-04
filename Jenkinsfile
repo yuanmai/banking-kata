@@ -1,7 +1,7 @@
 pipeline {
     agent any
 
-    stages {
+    stages('开发流水线') {
         stage('签出') {
             steps {
                 echo 'Building..'
