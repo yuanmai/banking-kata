@@ -17,9 +17,17 @@ pipeline {
                 echo 'Deploying....'
             }
         }
-        stage('代码扫描') {
+        stage('代码扫描') {    
             steps {
-                echo 'Deploying....'
+ parallel(
+          "Sonar扫描": {
+          echo 'Deploying....'
+          },
+          "安全扫描": {
+          echo 'Deploying....'
+            
+          }
+        )
             }
         }        
         stage('部署测试环境') {
