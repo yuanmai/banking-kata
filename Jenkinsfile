@@ -36,6 +36,7 @@ pipeline {
             }
         }        
         stage('自动化测试') {
+        steps{
  parallel(
           "自动化验收测试": {
           echo 'Deploying....'
@@ -43,7 +44,7 @@ pipeline {
           "回归测试": {
           echo 'Deploying....'            
           }
-        )
+        )}
         }
         stage('部署生产环境') {
             steps {
